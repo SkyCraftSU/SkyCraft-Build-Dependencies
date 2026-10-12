@@ -34,3 +34,28 @@ It intentionally does **not** store a full Gradle cache directly in Git. Large b
 ## Important
 
 A single `retrofuturagradle-1.4.2.jar` is not enough for a reproducible build. The plugin marker, POM/module metadata, transitive plugin dependencies, Forge/Minecraft artifacts, mappings, Java toolchains, and project cache state can also be required.
+
+## AE2 Stuff build and release from Windows
+
+Use the scripts in this repository; do not copy them into each mod repository.
+
+~~~powershell
+cd C:\PROJECT\SkyCraft-Build-Dependencies
+git pull
+.\scripts\backup-gradle-environment.ps1 `
+  -SourceProject "C:\PROJECT\ae2stuff-0.5.1.16-gtnh" `
+  -Destination "D:\SKYCRAFT-BUILD-DEPS\ae2stuff-0.5.1.16-gtnh" `
+  -GradleHome "C:\GradleCache"
+~~~
+
+To build and publish both JARs after installing GitHub CLI and running
+`gh auth login`:
+
+~~~powershell
+.\scripts\release-ae2stuff.ps1 -SourceProject "C:\PROJECT\ae2stuff-0.5.1.16-gtnh"
+~~~
+
+The release script requires both `CLIENT/build/libs/ae2stuff-0.5.1.16-client.jar`
+and `SERVER/build/libs/ae2stuff-0.5.1.16-server.jar`, checks their ZIP
+structure, and publishes SHA-256 files alongside them. A failed build
+prevents publication.
