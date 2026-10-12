@@ -1,0 +1,22 @@
+SkyCraft build dependency manifest
+Project: ae2stuff-0.5.1.16-gtnh
+Minecraft: 1.7.10
+Forge: 10.13.4.1614
+Gradle: 8.5
+RetroFuturaGradle: 1.4.2
+
+Pinned compile dependencies currently used by the project:
+- com.github.GTNewHorizons:Applied-Energistics-2-Unofficial:rv3-beta-76-GTNH:dev
+- com.github.GTNewHorizons:bdlib:1.9.6:dev
+- com.github.GTNewHorizons:waila:1.5.19:dev (compileOnly)
+- com.github.GTNewHorizons:NotEnoughItems:2.2.7-GTNH:dev (compileOnly)
+- com.github.GTNewHorizons:BuildCraft:7.1.27:dev (compileOnly)
+
+Verified GitHub release assets used as fallback for legacy artifacts:
+- AE2 dev jar: https://github.com/GTNewHorizons/Applied-Energistics-2-Unofficial/releases/download/rv3-beta-76-GTNH/appliedenergistics2-1.7.10-rv3-beta-76-GTNH-dev.jar
+- NEI dev jar: https://github.com/GTNewHorizons/NotEnoughItems/releases/download/2.2.7-GTNH/NotEnoughItems-1.7.10-2.2.7-GTNH-dev.jar
+
+Notes:
+- This manifest records exact versions and sources, not the binary files themselves.
+- Record SHA-256 hashes when binary snapshots are archived.
+- Offline reproducibility is only confirmed after a clean restore and successful --offline build.
